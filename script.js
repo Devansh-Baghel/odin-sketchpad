@@ -36,7 +36,7 @@ let createDivs = (n) => {
 	const gridChildren = document.querySelectorAll(".child");
 
 	gridChildren.forEach((gridChild) => {
-		gridChild.addEventListener("mouseover", () => {
+		gridChild.addEventListener("mousemove", () => {
 			if(blackButton.className == "black-toggle-on"){
 				gridChild.style.backgroundColor = "black";
 			}
