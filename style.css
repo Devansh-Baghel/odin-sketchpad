@@ -1,0 +1,15 @@
+.container{
+	display: grid;
+	width: 500px;
+	height: 500px;
+}
+
+.container div{
+	/* border: 1px solid black; */
+	margin: 0;
+	padding: 0;
+}
+.container div:hover{
+	background-color: blue;
+	cursor: grabbing;
+}
