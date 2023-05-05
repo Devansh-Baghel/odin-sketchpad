@@ -1,6 +1,9 @@
 const container = document.querySelector(".container");
-const gridInput = document.querySelector("#gridInput");
-const gridInputSubmitButton = document.querySelector("button")
+const gridInput = document.querySelector("#grid-input");
+const gridInputSubmitButton = document.querySelector("#submit-button");
+const rgbButton = document.querySelector("#rgb-toggle");
+const blackButton = document.querySelector("#black-toggle");
+const clearButton = document.querySelector(".clear-canvas");
 
 let gridSize = 16;
 
@@ -17,6 +20,7 @@ let clearGrid = () => {
 }
 
 let createDivs = (n) => {
+	clearGrid();
 	let gridColumns = [];
 	for(let i = 0; i<n*n; i++){
 		const div = document.createElement("div");
@@ -33,8 +37,17 @@ let createDivs = (n) => {
 
 	gridChildren.forEach((gridChild) => {
 		gridChild.addEventListener("mouseover", () => {
-			const randomColor = getRandomColor();
-			gridChild.style.backgroundColor = randomColor;
+			if(blackButton.className == "black-toggle-on"){
+				gridChild.style.backgroundColor = "black";
+			}
+			else if(rgbButton.className == "rgb-toggle-on"){
+				const randomColor = getRandomColor();
+				gridChild.style.backgroundColor = randomColor;
+			}
+			else{
+				gridChild.style.backgroundColor = "blue";
+				// console.log(rgbButton.classList);
+			}
 		});
 	})
 
@@ -45,9 +58,22 @@ let getInputValue = () => {
 	if (gridSize > 100) { 
 		gridSize = 100;
 	}
-	clearGrid();
 	createDivs(gridSize);
 }
 
 gridInputSubmitButton.addEventListener("click", getInputValue);
 createDivs(gridSize);
+
+
+rgbButton.addEventListener("click", () => {
+	rgbButton.classList.toggle("rgb-toggle-on");
+})
+
+blackButton.addEventListener("click", () => {
+	blackButton.classList.toggle("black-toggle-on");
+})
+
+clearButton.addEventListener("click", () => {
+	clearGrid();
+	createDivs(gridSize);
+})

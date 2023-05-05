@@ -14,3 +14,13 @@
 	background-color: blue;
 	/* cursor: grabbing; */
 }
+
+.rgb-toggle-on{
+	background: linear-gradient(45deg, rgba(249,255,0,1) 0%, rgba(20,195,253,1) 75%);
+
+}
+
+.black-toggle-on{
+	background-color: black;
+	color: white;
+}
