@@ -2,14 +2,15 @@
 	display: grid;
 	width: 500px;
 	height: 500px;
+	border: 10px solid black;
 }
 
-.container div{
+.child{
 	/* border: 1px solid black; */
 	margin: 0;
 	padding: 0;
 }
-.container div:hover{
+.child:hover{
 	background-color: blue;
-	cursor: grabbing;
+	/* cursor: grabbing; */
 }
