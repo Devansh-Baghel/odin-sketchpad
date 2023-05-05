@@ -1,8 +1,16 @@
 const container = document.querySelector(".container");
 const gridInput = document.querySelector("#gridInput");
-const gridInputSubmitButton = document.querySelector("button");
+const gridInputSubmitButton = document.querySelector("button")
 
 let gridSize = 16;
+
+let getRandomColor = () => {
+	const red = Math.floor(Math.random() * 256);
+	const blue = Math.floor(Math.random() * 256);
+	const green = Math.floor(Math.random() * 256);
+
+	return `rgb(${red}, ${blue}, ${green})`;
+}
 
 let clearGrid = () => {
 	container.innerText = "";
@@ -25,7 +33,8 @@ let createDivs = (n) => {
 
 	gridChildren.forEach((gridChild) => {
 		gridChild.addEventListener("mouseover", () => {
-			gridChild.style.backgroundColor = 'blue';
+			const randomColor = getRandomColor();
+			gridChild.style.backgroundColor = randomColor;
 		});
 	})
 
