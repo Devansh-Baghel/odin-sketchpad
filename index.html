@@ -10,16 +10,23 @@
 </head>
 <body>
 	<h1>Etch-a-Sketch</h1>
-	<div class="container"></div>
-	<div class="user-controls">
-		<button class="clear-canvas">Clear Canvas</button>
-		<div class="grid-size">
+	<div class="middle-section">
+		<div class="user-controls">
+
 			<h3>Enter a grid size: </h3>
-			<input type="number" id="grid-input" placeholder="16">
-			<button id="submit-button">Submit</button>
+			<div class="grid-size">
+				<input type="number" id="grid-input" placeholder="16">
+				<button id="submit-button">Submit</button>
+			</div>
+			<div class="toggles">
+				<button id="rgb-toggle" class="">RGB</button>
+				<button id="black-toggle">Black</button>
+			</div>
+			<button class="clear-canvas">Clear Canvas</button>
+			
 		</div>
-		<button id="rgb-toggle" class="">RGB</button>
-		<button id="black-toggle">Black</button>
+		<div class="container"></div>
 	</div>
+
 </body>
 </html>

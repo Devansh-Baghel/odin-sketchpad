@@ -67,10 +67,12 @@ createDivs(gridSize);
 
 rgbButton.addEventListener("click", () => {
 	rgbButton.classList.toggle("rgb-toggle-on");
+	blackButton.classList.remove("black-toggle-on");
 })
 
 blackButton.addEventListener("click", () => {
 	blackButton.classList.toggle("black-toggle-on");
+	rgbButton.classList.remove("rgb-toggle-on");
 })
 
 clearButton.addEventListener("click", () => {
