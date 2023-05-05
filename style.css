@@ -1,88 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+:root {
+  --red: rgb(255, 77, 77);
+	--blue: rgb(51, 125, 235);
+  --green: rgb(144, 238, 144);
+	--grey: rgb(240, 240, 240);
+	--black: rgb(0,0,0);
+	--white: rgb(255,255,255);
+}
+
 body{
 	font-family: 'Oswald', sans-serif;
-	background-color: lightgreen;
+	background-color: var(--green);
+}
+
+button,
+input{
+	border: none;
 }
 
 button:hover{
 	cursor: pointer;
 }
-.container{
-	display: grid;
-	width: 500px;
-	height: 500px;
-	border: 10px solid black;
-}
 
-.child{
-	border: 0.5px solid rgb(240, 240, 240);
-	margin: 0;
-	padding: 0;
-	background-color: white;
+h1{
+	text-align: center;
+	font-size: 44px;
 }
-.child:hover{
-	background-color: blue;
-	/* cursor: grabbing; */
-}
-
-.rgb-toggle-on{
-	background: linear-gradient(45deg, rgba(249,255,0,1) 0%, rgba(20,195,253,1) 75%);
-	color: white;
-}
-
-
 
 .middle-section {
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
+	gap: 100px;
 }
 
-.clear-canvas {
-	border: none;
-	background-color: white;
-	color: rgb(255, 77, 77);
-	width: 200px;
-	height: 50px;
-	border-radius: 10px;
-	font-size: 20px;
-	font-weight: 700;
-	display: block;
+.container{
+	display: grid;
+	width: 500px;
+	height: 500px;
+	border: 10px solid var(--black);
 }
 
-.clear-canvas:hover{
-	background-color: rgb(255, 77, 77);
-	color: white;
-}
-
-#rgb-toggle,
-#black-toggle{
-	border: none;
-	width: 95px;
-	height: 50px;
-	border-radius: 10px;
-	font-size: 20px;
-	font-weight: 700;
-}
-
-#rgb-toggle{
-	color: rgb(51, 125, 235);
-	background-color: white;
-}
-
-.black-toggle-on{
-	background: black;
-	color: white;
+.child{
+	border: 0.5px solid var(--grey);
+	background-color: var(--white);
 }
 
 .user-controls{
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-}
-
-.toggles{
-	display: flex;
 	gap: 10px;
 }
 
@@ -92,9 +58,16 @@ h3{
 	font-size: 20px;
 }
 
+.grid-size-controls{
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+}
+
 #grid-input{
 	border-radius: 7px;
-	border: none;
 	height: 30px;
 	width: 90px;
 	font-size: 20px;
@@ -104,21 +77,51 @@ h3{
 #submit-button{
 	height: 32px;
 	width: 90px;
-	background-color: white;
-	border: none;
+	background-color: var(--white);
 	border-radius: 7px;
 	font-size: 16px;
 }
-.grid-size{
+
+.toggles{
 	display: flex;
 	gap: 10px;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 60px;
-	/* margin-top: -10px; */
+}
+.rgb-toggle-on{
+	background: linear-gradient(45deg, rgba(249,255,0,1) 0%, rgba(20,195,253,1) 75%);
+	color: var(--white);
 }
 
-h1{
-	text-align: center;
-	font-size: 44px;
+.black-toggle-on{
+	background: var(--black);
+	color: var(--white);
+}
+
+#rgb-toggle,
+#black-toggle{
+	width: 95px;
+	height: 50px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+#rgb-toggle{
+	color: var(--blue);
+	background-color: var(--white);
+}
+
+.clear-canvas {
+	background-color: var(--white);
+	color: var(--red);
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 700;
+	display: block;
+}
+
+.clear-canvas:hover{
+	background-color: var(--red);
+	color: var(--white);
 }
